@@ -1,0 +1,272 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+:root{
+    --header-height: 4.5rem;
+  /* colors */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+
+    --color: rgb(78, 179, 78);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font: 400 1rem "DM Sans", sans-serif;
+    color: var(--text-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+.title{
+    
+    font: 700 1.875rem "Poppins", sans-serif;
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+/*RESET*/
+
+.button{
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+    height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    font: 500 1rem "DM Sans", sans-serif;
+    transition: background 0.3s;
+}
+
+.button:hover{
+    background: var(--base-color-alt);
+}
+
+.divider-1{
+    height: 1px;
+    background: linear-gradient(
+        270deg,
+         hsla(var (--hue) 36%, 57%, 1)0%,
+         hsla(var (--hue) 65%, 88%, 0.34)100%);
+}
+
+.container{
+    margin-left: 1.5 rem;
+    margin-right: 1.5 rem;
+}
+
+.grid{
+    display: grid;
+    gap: 2rem;
+}
+
+.section{
+    padding: 5rem 0;
+
+}
+/*RESET*/
+#header{
+    border-bottom: 1px solid #E4E4E4;
+    margin-bottom: 2rem;
+    display: flex;
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:100;
+    background-color: var(--body-color);
+}
+
+nav{
+    height: (--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+nav ul.grid{
+    gap: 4rem;
+}
+
+nav ul li{
+    text-align: center;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+
+    background: var(--body-color);
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main{
+    margin-top: calc(var(--header-height) + 2rem);
+}
+
+.logo{
+    font: 700 1.31rem "Poppins", sans-serif;
+    color: var(--title-color);
+}
+
+.logo span{
+    color: var(--base-color);
+}
+
+
+#home{
+    overflow: hidden;
+}
+
+#home.container{
+    margin: 0;
+    }
+
+#home.image {
+    position: relative;
+    }
+
+#home.image::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -16.8%;
+    left: 16.7;
+    z-index: 0;
+}
+
+#home.image img{
+    position: relative;
+    right: 2.93rem;
+}
+
+#home.image img,
+#home.image::before{
+    border-radius: 0.25rem; 
+}
+#home.text{
+    margin-left: 1.5 rem;
+    margin-right: 1.5 rem;
+    text-align: center;
+}
+
+#home.text h1{
+    margin-bottom: 1 rem;
+}
+
+#home.text p{
+    margin-bottom: 2 rem;
+}
+
+#about .image img,
+#about .image ::before{
+    border-radius: 0.25rem;
+}
+
+#about .text{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.cards.grid{
+    gap: 1.5rem
+}
+
+.card{
+    
+    box-shadow: 0px, 0px, 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 0.25rem solid var(--base-color);
+    
+    text-align: center;
+}
+.card {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: var(--base-color)
+}
+
+.card .title{
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#testimonials { 
+    background: white;
+}
+
+#testimonials blockquote { 
+    padding: 2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem;
+}
+
+#testimonials blockquote p { 
+    position: relative;
+    text-indent: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+
+#testimonials blockquote p span { 
+    font: 700 2.5rem serif;
+
+    position: absolute;
+    top: -0.5rem;
+    left: -1.375rem;
+    color: var(--base--color);
+}
+
+#testimonials cite{
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    color: hsla(0, 0%, 46%, 1);
+}
+
+#testimonials cite img{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: 0.5rem;
+}
