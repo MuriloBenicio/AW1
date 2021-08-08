@@ -13,7 +13,7 @@ const links = document.querySelectorAll('nav ul li a')
 
 for (const link of links){
     link.addEventListener ('click', function(){
-        navHeight.classList.remove('show')
+        /*navHeight.classList.remove('show')*/
     })
 }
 
@@ -22,47 +22,44 @@ function changeHeaderWhenScroll(){
     const header = document.querySelector('#header')
     const navHeight = header.offsetHeight
 
-    if (window.scrolly >= navHeight){
+    if (window.scrollY >= navHeight){
         //scroll é maior que a altura do header
-       header.classlist.add ('scroll')
+       header.classList.add ('scroll')
     }else{
         //scroll é maior que a altura do header
-       header.classlist.remove ('scroll')
+       header.classList.remove ('scroll')
     }
 }
 
-window.addEventListener('scroll', function(){
-    changeHeaderWhenScroll()
-})
-
-const swiper = new Swiper{{
+/*testimonials carousel slider swiper*/
+const swiper = new Swiper ('.swiper-container',{
     slidesPerView: 1,
     pagination: {
-        el: 'swiper-pagination'
+        el: '.swiper-pagination'
     },
     mousewheel: true,
     keyboard: true
-}}
+})
 
 
-const scrollReveal = ScrollReveal{{
+/*ScrollReveal: Mostrar elementos quando der scroll na página*/
+const scrollReveal = ScrollReveal({
     origin: 'top',
     distance: '30px',
     duration: 700,
     reset: true
-}}
+})
 
-
-scrollReveal.reveal{
-    '#home .image #home .text,
-    #about .image #about .text
+scrollReveal.reveal(
+    `#home .image, #home .text,
+    #about .image, #about .text,
     #services header, #services .card,
-    #testimonials header, #testimonials .testimonials,
+    #testimonials header, #testimonials .testimonials
     #contact .text, #contact .links,
-    footer .brand, footer. social
-    ',
-    {interval: 100}
-}
+    footer .brand, footer .social
+    `,
+    { interval: 100 }
+)
 
 //Botão voltar para o topo
 function backToTop(){
@@ -80,3 +77,16 @@ window.addEventListener('scroll', function(){
     changeHeaderWhenScroll()
     backToTop()
 })
+
+window.addEventListener('scroll', function(){
+    changeHeaderWhenScroll()
+})
+
+
+
+
+
+
+
+
+
